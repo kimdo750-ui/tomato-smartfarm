@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하루의 토마토농장 - 스마트팜 사업계획</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .content h2 {
+            color: #d32f2f;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #d32f2f;
+        }
+
+        .document-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .document-card {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #ffb3ba;
+        }
+
+        .document-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
+        }
+
+        .document-card h3 {
+            color: #d32f2f;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .document-card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .document-card a {
+            display: inline-block;
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .document-card a:hover {
+            transform: scale(1.05);
+        }
+
+        .highlights {
+            background: #c8e6c9;
+            border-left: 4px solid #2e7d32;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .highlights h3 {
+            color: #1b5e20;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlights li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #2e7d32;
+        }
+
+        .highlights li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2e7d32;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .metric-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 4px solid #d32f2f;
+            text-align: center;
+        }
+
+        .metric-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .metric-value {
+            color: #d32f2f;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .footer p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            .document-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍅 하루의 토마토농장</h1>
+            <p>청년농 정부지원 기반 스마트팜 사업계획</p>
+        </div>
+
+        <div class="content">
+            <h2>📋 사업 문서</h2>
+            <p style="color: #666; margin-bottom: 25px;">
+                아래 문서들은 스마트팜 토마토 사업의 상세한 계획과 분석 자료입니다.
+                각 문서를 클릭하여 자세한 내용을 확인하세요.
+            </p>
+
+            <div class="document-grid">
+                <div class="document-card">
+                    <h3>📊 수정 사업계획서</h3>
+                    <p>
+                        <strong>정부지원금 5억 기반 수정본</strong><br/>
+                        <br/>자부담 최소화 투자 구조, 정확한 재정 계산,
+                        손익분기점 분석 등을 포함한 최신 사업계획서
+                    </p>
+                    <a href="하루의토마토농장_수정사업계획서.html" target="_blank">보기 →</a>
+                </div>
+
+                <div class="document-card">
+                    <h3>📈 분석 보고서</h3>
+                    <p>
+                        <strong>심층 분석 및 타당성 검증</strong><br/>
+                        <br/>시장 분석, 경쟁사 분석, SWOT 분석,
+                        재정 타당성, ROI 분석 등 8개 섹션의 심층 분석
+                    </p>
+                    <a href="스마트팜_토마토_분석보고서.html" target="_blank">보기 →</a>
+                </div>
+
+                <div class="document-card">
+                    <h3>📑 원본 사업계획서</h3>
+                    <p>
+                        <strong>기본 사업계획 및 추진전략</strong><br/>
+                        <br/>사업개요, 비즈니스 모델, 기술전략,
+                        마케팅 전략, 위험관리 등 포함
+                    </p>
+                    <a href="스마트팜_토마토_사업계획서.html" target="_blank">보기 →</a>
+                </div>
+            </div>
+
+            <div class="highlights">
+                <h3>🎯 핵심 재정 지표</h3>
+                <ul>
+                    <li>초기 투자: 6.1억 원 (정부지원 5억 + 자부담 1.1억)</li>
+                    <li>1년차 매출: 35억 원</li>
+                    <li>1년차 순이익: 22.9억 원</li>
+                    <li>손익분기점: 약 2주</li>
+                    <li>3년 누적 순이익: 102.4억 원</li>
+                    <li>3년 ROI: 9,309%</li>
+                </ul>
+            </div>
+
+            <h2>📊 주요 수치</h2>
+            <div class="metrics">
+                <div class="metric-box">
+                    <div class="metric-label">정부지원금</div>
+                    <div class="metric-value">5억</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">자부담</div>
+                    <div class="metric-value">1.1억</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">1년차 순이익</div>
+                    <div class="metric-value">22.9억</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-label">3년 누적</div>
+                    <div class="metric-value">102.4억</div>
+                </div>
+            </div>
+
+            <h2>📅 사업 일정</h2>
+            <div class="highlights" style="background: #e3f2fd; border-left-color: #1976d2;">
+                <h3 style="color: #0d47a1;">추진 일정</h3>
+                <ul style="color: #1565c0;">
+                    <li><strong>Phase 1 (Month 1-2):</strong> 정부지원금 신청, 토지 확보, 기술 파트너 선정</li>
+                    <li><strong>Phase 2 (Month 3-4):</strong> 온실 시공, 장비 설치, 시스템 구축</li>
+                    <li><strong>Phase 3 (Month 5-6):</strong> 인력 교육, 베타 운영, 고객 확보</li>
+                    <li><strong>Phase 4 (Month 7+):</strong> 본격 운영, 매출 창출, 수익화</li>
+                </ul>
+            </div>
+
+            <h2>❓ 자주 묻는 질문</h2>
+            <div class="highlights" style="background: #fff3e0; border-left-color: #f57c00;">
+                <h3 style="color: #e65100;">Q&A</h3>
+                <ul style="color: #bf360c;">
+                    <li><strong>Q: 초기 투자는 얼마나 필요한가?</strong><br/>
+                    A: 총 6.1억 원 (정부지원 5억 + 자부담 1.1억). 정부지원으로 87% 커버됩니다.</li>
+
+                    <li><strong>Q: 손익분기점은?</strong><br/>
+                    A: 약 2주 내 초기 투자 회수 가능. 월 순이익 2.47억 원 기준</li>
+
+                    <li><strong>Q: 1년차 실제 수익은?</strong><br/>
+                    A: 세후 순이익 약 22.9억 원. (매출 35억 - 운영비 5.18억)</li>
+
+                    <li><strong>Q: 정부지원금은 어디서 신청?</strong><br/>
+                    A: 농림축산식품부 청년농 육성사업. 2-3개월 소요</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>🍅 하루의 토마토농장</strong></p>
+            <p>청년농 정부지원 기반 스마트팜 사업계획서</p>
+            <p style="margin-top: 15px; font-size: 0.9em; color: #999;">
+                📧 Contact: kimdo750@gmail.com<br/>
+                🔗 GitHub: <a href="https://github.com/kimdo750-ui/tomato-smartfarm" style="color: #999;">https://github.com/kimdo750-ui/tomato-smartfarm</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
