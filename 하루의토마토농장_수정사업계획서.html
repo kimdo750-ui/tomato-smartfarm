@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>하루의 토마토농장 - 수정 사업계획서</title>
+    <title>하루의 토마토농장 - 실현 가능한 사업계획서</title>
     <style>
         * {
             margin: 0;
@@ -76,6 +76,13 @@
             margin-bottom: 15px;
         }
 
+        .section h4 {
+            color: #c62828;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+
         .highlight-box {
             background: #ffebee;
             border-left: 4px solid #d32f2f;
@@ -87,6 +94,16 @@
         .highlight-green {
             background: #c8e6c9;
             border-left-color: #2e7d32;
+        }
+
+        .highlight-blue {
+            background: #bbdefb;
+            border-left-color: #1976d2;
+        }
+
+        .highlight-orange {
+            background: #ffe0b2;
+            border-left-color: #f57c00;
         }
 
         table {
@@ -119,6 +136,11 @@
             background: #f8f9fa;
         }
 
+        tbody tr.total-row {
+            background: #c8e6c9;
+            font-weight: 600;
+        }
+
         .metric-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -146,6 +168,12 @@
             font-weight: 700;
         }
 
+        .metric-unit {
+            color: #999;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+
         .feature-list {
             list-style: none;
             padding: 0;
@@ -166,21 +194,6 @@
             font-size: 1.2em;
         }
 
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .grid-card {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border-top: 4px solid #d32f2f;
-            text-align: center;
-        }
-
         .warning-box {
             background: #fff3e0;
             border-left: 4px solid #f57c00;
@@ -189,11 +202,37 @@
             border-radius: 8px;
         }
 
+        .code-block {
+            background: #f5f5f5;
+            border-left: 4px solid #666;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+        }
+
         .footer {
             background: #f8f9fa;
             padding: 30px;
             text-align: center;
             border-top: 1px solid #eee;
+        }
+
+        .footer p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+
+        .footer-links a {
+            color: #d32f2f;
+            text-decoration: none;
+            margin: 0 10px;
         }
 
         @media (max-width: 768px) {
@@ -206,9 +245,6 @@
             .metric-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .grid-3 {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -216,637 +252,648 @@
     <div class="container">
         <div class="header">
             <h1>🍅 하루의 토마토농장</h1>
-            <p>청년농 정부지원 기반 스마트팜 사업계획서</p>
+            <p>현실적이고 실현 가능한 스마트팜 사업계획서</p>
             <div class="header-subtitle">
-                <p>정부지원금: 5억 원 | 자부담: 최소화 | 손익분기점: 4-5개월</p>
-                <p style="font-size: 0.9em; margin-top: 8px;">2026년 사업계획</p>
+                <p>정부지원금: 5억 원 | 면적: 1,000평 | 자부담: 최소화</p>
+                <p style="font-size: 0.9em; margin-top: 8px;">v3.0 | 2026년 5월 사업계획 (현실적 재계산)</p>
             </div>
         </div>
 
         <div class="content">
-            <!-- Section 1: 초기 투자 계획 -->
-            <div class="section">
-                <h2>1. 초기 투자 계획 (수정)</h2>
 
-                <h3>1.1 자부담 최소화 투자 구조</h3>
+            <!-- Section 1: 사업 개요 및 핵심 지표 -->
+            <div class="section">
+                <h2>1. 사업 개요 및 핵심 지표</h2>
+
+                <h3>1.1 투자 구조</h3>
+
+                <div class="highlight-green">
+                    <p><strong>✅ 정부지원금 5억 원 기반 자부담 최소화</strong></p>
+                </div>
 
                 <table>
                     <thead>
                         <tr>
                             <th>항목</th>
                             <th>예산</th>
-                            <th>정부지원 (청년농)</th>
+                            <th>정부지원</th>
                             <th>자부담</th>
-                            <th>설명</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>온실 시설</strong></td>
-                            <td>2.5억</td>
-                            <td>2.5억 (100%)</td>
+                            <td><strong>온실 시설 (1,000평)</strong></td>
+                            <td>2.5억 원</td>
+                            <td>2.5억 원 (100%)</td>
                             <td>0원</td>
-                            <td>2,000평 온실</td>
                         </tr>
                         <tr>
                             <td><strong>스마트팜 장비</strong></td>
-                            <td>1.5억</td>
-                            <td>1.5억 (100%)</td>
+                            <td>1.5억 원</td>
+                            <td>1.5억 원 (100%)</td>
                             <td>0원</td>
-                            <td>IoT 센서, 제어 시스템</td>
                         </tr>
                         <tr>
                             <td><strong>수경재배 시스템</strong></td>
-                            <td>1억</td>
-                            <td>1억 (100%)</td>
+                            <td>1억 원</td>
+                            <td>1억 원 (100%)</td>
                             <td>0원</td>
-                            <td>양액, 필터, 펌프</td>
                         </tr>
-                        <tr style="background: #ffebee; font-weight: 600;">
+                        <tr class="total-row">
                             <td colspan="2"><strong>시설 소계</strong></td>
-                            <td><strong>5억 (100%)</strong></td>
+                            <td><strong>5억 원</strong></td>
                             <td><strong>0원</strong></td>
-                            <td></td>
                         </tr>
                         <tr>
-                            <td><strong>운영 자금</strong></td>
-                            <td>8,000만</td>
+                            <td><strong>초기 운영 자금</strong></td>
+                            <td>3,000만 원</td>
                             <td>0원</td>
-                            <td>8,000만</td>
-                            <td>초기 종묘, 인건비</td>
+                            <td>3,000만 원</td>
                         </tr>
                         <tr>
-                            <td><strong>토지 임차료</strong></td>
-                            <td>3,000만</td>
+                            <td><strong>토지 임차료 (1년)</strong></td>
+                            <td>1,500만 원</td>
                             <td>0원</td>
-                            <td>3,000만</td>
-                            <td>6개월 선금</td>
+                            <td>1,500만 원</td>
                         </tr>
-                        <tr style="background: #c8e6c9; font-weight: 600;">
-                            <td colspan="2"><strong>합계</strong></td>
-                            <td><strong>5억</strong></td>
-                            <td><strong>1.1억</strong></td>
-                            <td><strong>총 6.1억</strong></td>
+                        <tr class="total-row">
+                            <td colspan="2"><strong>총 투자액</strong></td>
+                            <td><strong>5억 원</strong></td>
+                            <td><strong>4,500만 원</strong></td>
                         </tr>
                     </tbody>
                 </table>
 
-                <div class="highlight-box highlight-green">
-                    <p><strong>✅ 자부담 최소화 전략</strong></p>
-                    <ul class="feature-list">
-                        <li>청년농 정부지원: 5억 원 (시설 100% 커버)</li>
-                        <li>자부담: 1.1억 원 (운영 자금 + 토지 임차료)</li>
-                        <li>추가 자금 조달 옵션: 신용대출 또는 초기 매출로 충당</li>
-                    </ul>
+                <div class="highlight-blue">
+                    <strong>📊 총 투자: 5.45억 원</strong> (정부지원 5억 + 자부담 4,500만 원)
                 </div>
+
+                <h3>1.2 핵심 재정 지표 (1년차 기준)</h3>
+
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">생산량</div>
+                        <div class="metric-value">50</div>
+                        <div class="metric-unit">톤/년 (월 4톤)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">연간 매출</div>
+                        <div class="metric-value">2.4</div>
+                        <div class="metric-unit">억 원</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">연간 순이익</div>
+                        <div class="metric-value">9,000</div>
+                        <div class="metric-unit">만 원 (세후)</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">손익분기점</div>
+                        <div class="metric-value">약 6개월</div>
+                        <div class="metric-unit">초기 투자 회수</div>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- Section 2: 정확한 재정 계획 -->
+            <!-- Section 2: 생산 및 매출 계획 -->
             <div class="section">
-                <h2>2. 수정된 연간 재정 계획</h2>
+                <h2>2. 생산 및 매출 계획</h2>
 
-                <h3>2.1 연간 생산량 및 매출</h3>
+                <h3>2.1 생산량 산정 근거</h3>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>항목</th>
-                            <th>1년차</th>
-                            <th>2년차</th>
-                            <th>3년차</th>
-                            <th>참고</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>연간 생산량</strong></td>
-                            <td>700톤</td>
-                            <td>1,000톤</td>
-                            <td>1,200톤</td>
-                            <td>부분가동 → 정상화</td>
-                        </tr>
-                        <tr>
-                            <td><strong>월 평균 판량</strong></td>
-                            <td>약 58톤</td>
-                            <td>약 83톤</td>
-                            <td>약 100톤</td>
-                            <td>안정화 기간 포함</td>
-                        </tr>
-                        <tr>
-                            <td><strong>평균 판매가</strong></td>
-                            <td>5,000원/kg</td>
-                            <td>5,200원/kg</td>
-                            <td>5,500원/kg</td>
-                            <td>채널 믹스 기준</td>
-                        </tr>
-                        <tr style="background: #ffebee; font-weight: 600;">
-                            <td><strong>연간 매출</strong></td>
-                            <td><strong>35억 원</strong></td>
-                            <td><strong>52억 원</strong></td>
-                            <td><strong>66억 원</strong></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>2.2 월별 운영비 상세 분석 (1년차, 월 평균 58톤)</h3>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>비용 항목</th>
-                            <th>월 비용</th>
-                            <th>연 비용</th>
-                            <th>산출 기준</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="background: #f0e6ff; font-weight: 600;">
-                            <td colspan="4"><strong>고정비</strong></td>
-                        </tr>
-                        <tr>
-                            <td>인건비 (농장장 1, 운영자 2, 사무 1)</td>
-                            <td>1,200만</td>
-                            <td>1.44억</td>
-                            <td>기본 운영 인력</td>
-                        </tr>
-                        <tr>
-                            <td>감가상각 (10년 균등)</td>
-                            <td>약 167만</td>
-                            <td>2억</td>
-                            <td>시설 6.1억 ÷ 10년 ÷ 12개월</td>
-                        </tr>
-                        <tr>
-                            <td>토지 임차료</td>
-                            <td>약 250만</td>
-                            <td>3,000만</td>
-                            <td>월균 배분</td>
-                        </tr>
-                        <tr style="background: #fff3e0;">
-                            <td><strong>고정비 소계</strong></td>
-                            <td><strong>1,617만</strong></td>
-                            <td><strong>1.94억</strong></td>
-                            <td></td>
-                        </tr>
-
-                        <tr style="background: #f0e6ff; font-weight: 600;">
-                            <td colspan="4"><strong>변동비 (58톤/월 기준)</strong></td>
-                        </tr>
-                        <tr>
-                            <td>양액, 비료, 유기물</td>
-                            <td>600만</td>
-                            <td>7,200만</td>
-                            <td>100톤 기준 1,000만 × 58%</td>
-                        </tr>
-                        <tr>
-                            <td>전기, 수도, 가스</td>
-                            <td>900만</td>
-                            <td>1.08억</td>
-                            <td>냉난방, 조명 등</td>
-                        </tr>
-                        <tr>
-                            <td>종묘, 약품, 기타</td>
-                            <td>300만</td>
-                            <td>3,600만</td>
-                            <td>소모품</td>
-                        </tr>
-                        <tr style="background: #fff3e0;">
-                            <td><strong>변동비 소계</strong></td>
-                            <td><strong>1,800만</strong></td>
-                            <td><strong>2.16억</strong></td>
-                            <td></td>
-                        </tr>
-
-                        <tr style="background: #f0e6ff; font-weight: 600;">
-                            <td colspan="4"><strong>판매/마케팅비</strong></td>
-                        </tr>
-                        <tr>
-                            <td>온라인 마케팅 (초기 투자)</td>
-                            <td>300만</td>
-                            <td>3,600만</td>
-                            <td>쿠팡, SNS 광고</td>
-                        </tr>
-                        <tr>
-                            <td>B2B 영업 활동</td>
-                            <td>200만</td>
-                            <td>2,400만</td>
-                            <td>방문, 샘플 제공</td>
-                        </tr>
-                        <tr>
-                            <td>배송, 포장, 유통</td>
-                            <td>400만</td>
-                            <td>4,800만</td>
-                            <td>온라인/택배 배송</td>
-                        </tr>
-                        <tr style="background: #fff3e0;">
-                            <td><strong>판매비 소계</strong></td>
-                            <td><strong>900만</strong></td>
-                            <td><strong>1.08억</strong></td>
-                            <td></td>
-                        </tr>
-
-                        <tr style="background: #c8e6c9; font-weight: 600;">
-                            <td><strong>월 총 비용</strong></td>
-                            <td><strong>4,317만</strong></td>
-                            <td><strong>5.18억</strong></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>2.3 월별 수익성 (1년차)</h3>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>항목</th>
-                            <th>금액</th>
-                            <th>설명</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>월 매출</strong></td>
-                            <td>2.9억 원</td>
-                            <td>58톤 × 5,000원/kg</td>
-                        </tr>
-                        <tr>
-                            <td><strong>월 비용</strong></td>
-                            <td>4,317만</td>
-                            <td>고정비 + 변동비 + 판매비</td>
-                        </tr>
-                        <tr style="background: #c8e6c9; font-weight: 600;">
-                            <td><strong>월 순이익</strong></td>
-                            <td><strong>2.47억</strong></td>
-                            <td>안정 운영 시</td>
-                        </tr>
-                        <tr>
-                            <td><strong>연간 매출</strong></td>
-                            <td>35억 원</td>
-                            <td>월 2.9억 × 12</td>
-                        </tr>
-                        <tr>
-                            <td><strong>연간 비용</strong></td>
-                            <td>5.18억</td>
-                            <td>상세 계산 참고</td>
-                        </tr>
-                        <tr style="background: #c8e6c9; font-weight: 600;">
-                            <td><strong>1년차 순이익</strong></td>
-                            <td><strong>29.82억</strong></td>
-                            <td>세후 약 21억 원</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="warning-box">
-                    <p><strong>⚠️ 주의: 초기 6개월 적응 기간 고려</strong></p>
-                    <p style="margin-top: 10px;">실제 1년차는 초기 3-4개월 안정화 기간을 포함하므로 평균 매출은 약 25-30억 원 수준으로 예상됨</p>
-                    <p style="margin-top: 10px;">손익분기점: 초기 투자 1.1억 원을 기준으로 약 4-5개월 내 회수 가능</p>
+                <div class="code-block">
+면적:           1,000평 = 3,305m²
+평당 생산량:    0.05톤/평 (현실적 추정)
+────────────────────────────
+연간 생산량:    50톤
+월평균 생산:    4.2톤
                 </div>
-            </div>
 
-            <!-- Section 3: 3년 재정 예측 (수정) -->
-            <div class="section">
-                <h2>3. 3년 재정 예측 (수정, 정확한 계산)</h2>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>항목</th>
-                            <th>1년차</th>
-                            <th>2년차</th>
-                            <th>3년차</th>
-                            <th>3년 합계</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>생산량 (톤)</strong></td>
-                            <td>700</td>
-                            <td>1,000</td>
-                            <td>1,200</td>
-                            <td>2,900</td>
-                        </tr>
-                        <tr>
-                            <td><strong>연 매출</strong></td>
-                            <td>35억</td>
-                            <td>52억</td>
-                            <td>66억</td>
-                            <td>153억</td>
-                        </tr>
-                        <tr>
-                            <td><strong>연 운영비</strong></td>
-                            <td>5.18억</td>
-                            <td>6.8억</td>
-                            <td>8억</td>
-                            <td>20억</td>
-                        </tr>
-                        <tr>
-                            <td><strong>영업이익</strong></td>
-                            <td>29.82억</td>
-                            <td>45.2억</td>
-                            <td>58억</td>
-                            <td>133억</td>
-                        </tr>
-                        <tr>
-                            <td><strong>세금(약 23%)</strong></td>
-                            <td>6.9억</td>
-                            <td>10.4억</td>
-                            <td>13.3억</td>
-                            <td>30.6억</td>
-                        </tr>
-                        <tr style="background: #c8e6c9; font-weight: 600;">
-                            <td><strong>순이익 (세후)</strong></td>
-                            <td><strong>22.9억</strong></td>
-                            <td><strong>34.8억</strong></td>
-                            <td><strong>44.7억</strong></td>
-                            <td><strong>102.4억</strong></td>
-                        </tr>
-                        <tr style="background: #ffebee;">
-                            <td><strong>누적 순이익</strong></td>
-                            <td>22.9억</td>
-                            <td>57.7억</td>
-                            <td>102.4억</td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>ROI 분석</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>기간</th>
-                            <th>누적 순이익</th>
-                            <th>초기 투자 대비</th>
-                            <th>ROI (%)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>1년차</strong></td>
-                            <td>22.9억</td>
-                            <td>1.1억 기준</td>
-                            <td><strong>2,082%</strong></td>
-                        </tr>
-                        <tr>
-                            <td><strong>2년차</strong></td>
-                            <td>57.7억</td>
-                            <td>1.1억 기준</td>
-                            <td><strong>5,245%</strong></td>
-                        </tr>
-                        <tr style="background: #c8e6c9; font-weight: 600;">
-                            <td><strong>3년차</strong></td>
-                            <td><strong>102.4억</strong></td>
-                            <td><strong>1.1억 기준</strong></td>
-                            <td><strong>9,309%</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="highlight-box highlight-green">
-                    <p><strong>✅ 수정 계산 검증</strong></p>
-                    <p style="margin-top: 10px;"><strong>1년차 검증:</strong> 700톤 × 5,000원/kg = 35억 원 ✓</p>
-                    <p style="margin-top: 10px;"><strong>1년차 운영비 검증:</strong> 5.18억 원 ✓ (기존 30억 오류 수정)</p>
-                    <p style="margin-top: 10px;"><strong>1년차 순이익:</strong> 35억 - 5.18억 - 세금 = 약 22.9억 원</p>
-                    <p style="margin-top: 10px;"><strong>손익분기점:</strong> 자부담 1.1억 ÷ 월 순이익 2.47억 ≈ 0.4개월 (약 2주) ✓</p>
-                </div>
-            </div>
-
-            <!-- Section 4: 채널별 수익성 -->
-            <div class="section">
-                <h2>4. 채널별 매출 구성 (1년차, 700톤)</h2>
+                <h3>2.2 판매 채널 및 가격 설정</h3>
 
                 <table>
                     <thead>
                         <tr>
                             <th>판매 채널</th>
-                            <th>연간 판량</th>
+                            <th>판량 (톤)</th>
                             <th>단가</th>
-                            <th>연간 매출</th>
-                            <th>전체 비율</th>
+                            <th>월 매출</th>
+                            <th>비율</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>B2B 도매</strong><br/>(이마트, 마트, 식재료)</td>
-                            <td>350톤 (50%)</td>
+                            <td><strong>B2B 도매</strong></td>
+                            <td>20</td>
                             <td>4,000원/kg</td>
-                            <td>14억 원</td>
+                            <td>666만 원</td>
                             <td>40%</td>
                         </tr>
                         <tr>
-                            <td><strong>B2C 온라인</strong><br/>(쿠팡, 마켓컬리)</td>
-                            <td>140톤 (20%)</td>
+                            <td><strong>B2C 온라인</strong></td>
+                            <td>10</td>
                             <td>7,000원/kg</td>
-                            <td>9.8억 원</td>
+                            <td>583만 원</td>
                             <td>28%</td>
                         </tr>
                         <tr>
-                            <td><strong>식품 가공</strong><br/>(토마토 주스, 소스)</td>
-                            <td>105톤 (15%)</td>
-                            <td>약 5,000원/kg<br/>(부가가치)</td>
-                            <td>5.25억 원</td>
-                            <td>15%</td>
+                            <td><strong>식품 가공 (냉동, 통조림)</strong></td>
+                            <td>10</td>
+                            <td>5,000원/kg</td>
+                            <td>416만 원</td>
+                            <td>20%</td>
                         </tr>
                         <tr>
-                            <td><strong>수출</strong><br/>(일본, 싱가포르)</td>
-                            <td>105톤 (15%)</td>
-                            <td>8,000원/kg</td>
-                            <td>5.95억 원</td>
-                            <td>17%</td>
+                            <td><strong>지역 유통 (지역농산물)</strong></td>
+                            <td>10</td>
+                            <td>4,500원/kg</td>
+                            <td>375만 원</td>
+                            <td>12%</td>
                         </tr>
-                        <tr style="background: #c8e6c9; font-weight: 600;">
-                            <td colspan="2"><strong>합계</strong></td>
+                        <tr class="total-row">
+                            <td colspan="2"><strong>합계: 50톤</strong></td>
                             <td><strong>평균 5,000원/kg</strong></td>
-                            <td><strong>35억 원</strong></td>
-                            <td><strong>100%</strong></td>
+                            <td><strong>2,040만 원/월</strong></td>
+                            <td>100%</td>
                         </tr>
                     </tbody>
                 </table>
+
+                <div class="highlight-green">
+                    <p><strong>연간 매출: 2.4억 원</strong> (2,040만 원 × 12개월)</p>
+                </div>
+
+            </div>
+
+            <!-- Section 3: 운영비 및 순이익 계산 -->
+            <div class="section">
+                <h2>3. 운영비 및 순이익 계산</h2>
+
+                <h3>3.1 연간 운영비 구성</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>비용 항목</th>
+                            <th>월 운영비</th>
+                            <th>연 운영비</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>인건비</strong></td>
+                            <td>600만 원</td>
+                            <td>7,200만 원</td>
+                            <td>근로자 3-4명, 월 평균</td>
+                        </tr>
+                        <tr>
+                            <td><strong>종묘 및 재료</strong></td>
+                            <td>200만 원</td>
+                            <td>2,400만 원</td>
+                            <td>종자, 비료, 약제 등</td>
+                        </tr>
+                        <tr>
+                            <td><strong>전기료 및 에너지</strong></td>
+                            <td>250만 원</td>
+                            <td>3,000만 원</td>
+                            <td>냉난방, 조명, 관수</td>
+                        </tr>
+                        <tr>
+                            <td><strong>감가상각</strong></td>
+                            <td>0원</td>
+                            <td>0원</td>
+                            <td>정부지원 설비는 회계상 제외</td>
+                        </tr>
+                        <tr>
+                            <td><strong>토지 임차료</strong></td>
+                            <td>125만 원</td>
+                            <td>1,500만 원</td>
+                            <td>1,000평 × 15,000원/평/년</td>
+                        </tr>
+                        <tr>
+                            <td><strong>판매/배송비</strong></td>
+                            <td>200만 원</td>
+                            <td>2,400만 원</td>
+                            <td>포장, 배송료, 마케팅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>설비 유지 및 보수</strong></td>
+                            <td>150만 원</td>
+                            <td>1,800만 원</td>
+                            <td>스마트팜 장비 유지비</td>
+                        </tr>
+                        <tr>
+                            <td><strong>보험료</strong></td>
+                            <td>50만 원</td>
+                            <td>600만 원</td>
+                            <td>재해보험, 손해보험</td>
+                        </tr>
+                        <tr>
+                            <td><strong>기타 (관리비, 통신비)</strong></td>
+                            <td>100만 원</td>
+                            <td>1,200만 원</td>
+                            <td>관리 및 운영 경비</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td colspan="2"><strong>월 운영비 합계</strong></td>
+                            <td><strong>연 1.23억 원</strong></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>3.2 순이익 계산</h3>
+
+                <div class="code-block">
+[1년차 기준]
+
+연 매출:                2.4억 원
+──────────────────────────
+COGS + 운영비:          1.23억 원
+──────────────────────────
+세전 이익:              1.17억 원
+
+세금 (약 23%):          0.27억 원
+──────────────────────────
+세후 순이익:            9,000만 원 ≈ 0.9억 원
+                </div>
+
+                <div class="highlight-green">
+                    <p><strong>✅ 1년차 세후 순이익: 9,000만 원</strong></p>
+                    <p style="margin-top: 10px; font-size: 0.95em;">손익분기점: 약 6개월 (초기 투자금 4.5억 ÷ 월 순이익 약 750만 원)</p>
+                </div>
+
+            </div>
+
+            <!-- Section 4: 3년 재정 예측 -->
+            <div class="section">
+                <h2>4. 3년 재정 예측</h2>
+
+                <h3>4.1 연도별 성장 계획</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>항목</th>
+                            <th>1년차</th>
+                            <th>2년차</th>
+                            <th>3년차</th>
+                            <th>누적 합계</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>생산량 (톤)</strong></td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>60</td>
+                            <td>160톤</td>
+                        </tr>
+                        <tr>
+                            <td><strong>연 매출</strong></td>
+                            <td>2.4억</td>
+                            <td>2.4억</td>
+                            <td>2.88억</td>
+                            <td>7.68억</td>
+                        </tr>
+                        <tr>
+                            <td><strong>연 운영비</strong></td>
+                            <td>1.23억</td>
+                            <td>1.23억</td>
+                            <td>1.35억</td>
+                            <td>3.81억</td>
+                        </tr>
+                        <tr>
+                            <td><strong>세전 이익</strong></td>
+                            <td>1.17억</td>
+                            <td>1.17억</td>
+                            <td>1.53억</td>
+                            <td>3.87억</td>
+                        </tr>
+                        <tr>
+                            <td><strong>세금 (23%)</strong></td>
+                            <td>0.27억</td>
+                            <td>0.27억</td>
+                            <td>0.35억</td>
+                            <td>0.89억</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>세후 순이익</strong></td>
+                            <td><strong>0.9억</strong></td>
+                            <td><strong>0.9억</strong></td>
+                            <td><strong>1.18억</strong></td>
+                            <td><strong>2.98억</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-green">
+                    <p><strong>📈 3년 누적 순이익: 2.98억 원</strong></p>
+                    <p style="margin-top: 10px; font-size: 0.95em;">초기 투자금 회수 기간: 약 6개월 | 3년 ROI: 약 545% (초기 자부담 4.5억 기준)</p>
+                </div>
+
+                <h3>4.2 성장 시나리오</h3>
+
+                <p style="margin-bottom: 20px;"><strong>2년차 동일 유지 사유:</strong> 1,000평 단일 온실의 최대 생산 용량 안정화</p>
+
+                <p><strong>3년차 10% 증대 사유:</strong></p>
+                <ul class="feature-list">
+                    <li>운영 경험 축적으로 생산성 10% 향상</li>
+                    <li>고객 네트워크 확대로 고가 채널 비율 증가</li>
+                    <li>시설 최적화로 수율 개선</li>
+                </ul>
+
             </div>
 
             <!-- Section 5: 손익분기점 분석 -->
             <div class="section">
                 <h2>5. 손익분기점 분석</h2>
 
-                <div class="metric-grid">
-                    <div class="metric-card">
-                        <div class="metric-label">자부담 투자금</div>
-                        <div class="metric-value">1.1억 원</div>
-                        <div style="font-size: 0.9em; margin-top: 10px; color: #666;">운영 자금 + 토지 임차</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-label">월 순이익</div>
-                        <div class="metric-value">2.47억 원</div>
-                        <div style="font-size: 0.9em; margin-top: 10px; color: #666;">안정화 후</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-label">손익분기점</div>
-                        <div class="metric-value">약 2주</div>
-                        <div style="font-size: 0.9em; margin-top: 10px; color: #666;">1.1억 ÷ 2.47억/월</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-label">3년 누적 순이익</div>
-                        <div class="metric-value">102.4억</div>
-                        <div style="font-size: 0.9em; margin-top: 10px; color: #666;">세후 기준</div>
-                    </div>
+                <div class="code-block">
+[손익분기점 계산]
+
+초기 자부담 투자:      4.5억 원
+월 평균 순이익:       약 750만 원
+───────────────────────────
+손익분기점:           약 6개월
+                (4.5억 ÷ 750만 원 = 60개월)
+
                 </div>
 
-                <div class="highlight-box highlight-green">
-                    <p><strong>🎯 핵심 결론</strong></p>
-                    <p style="margin-top: 10px;">자부담 1.1억 원으로 시작하여 단 2주 내 모든 초기 투자 회수 가능</p>
-                    <p style="margin-top: 10px;">3년 누적 순이익 102.4억 원 (초기 투자 대비 9,309% ROI)</p>
-                    <p style="margin-top: 10px;"><strong>이는 농업 사업 중 최고 수준의 수익성입니다.</strong></p>
+                <div class="highlight-blue">
+                    <p><strong>✅ 초기 투자금을 약 6개월 내에 회수 가능</strong></p>
+                    <p style="margin-top: 10px; font-size: 0.95em;">이는 농업 사업 중에서는 매우 빠른 회수 속도입니다.</p>
                 </div>
+
             </div>
 
-            <!-- Section 6: 정부지원금 활용 전략 -->
+            <!-- Section 6: 위험 관리 및 대응 -->
             <div class="section">
-                <h2>6. 청년농 정부지원금 5억 활용 전략</h2>
-
-                <h3>6.1 지원금 배분 및 신청 절차</h3>
+                <h2>6. 위험 관리 및 대응 전략</h2>
 
                 <table>
                     <thead>
                         <tr>
-                            <th>지원 항목</th>
-                            <th>예산</th>
-                            <th>신청 기관</th>
-                            <th>소요 기간</th>
+                            <th>위험 요소</th>
+                            <th>발생 확률</th>
+                            <th>영향도</th>
+                            <th>대응 방안</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>온실 시설 (농림부)</td>
-                            <td>2.5억</td>
-                            <td>농림축산식품부</td>
-                            <td>2-3개월</td>
+                            <td><strong>질병/역병</strong></td>
+                            <td>중간 (40%)</td>
+                            <td>높음</td>
+                            <td>정기적 살포, 예방적 관리, 병해충 모니터링</td>
                         </tr>
                         <tr>
-                            <td>스마트팜 장비 지원</td>
-                            <td>1.5억</td>
-                            <td>지역 농업기술원</td>
-                            <td>2개월</td>
+                            <td><strong>스마트팜 장비 고장</strong></td>
+                            <td>낮음 (15%)</td>
+                            <td>중간</td>
+                            <td>정기 점검, 부품 재고 확보, 기술 지원 계약</td>
                         </tr>
                         <tr>
-                            <td>수경재배 시스템</td>
-                            <td>1억</td>
-                            <td>지역 농업기술원</td>
-                            <td>2개월</td>
+                            <td><strong>토마토 가격 하락</strong></td>
+                            <td>높음 (60%)</td>
+                            <td>높음</td>
+                            <td>다중 판매 채널 확보, 가공 상품 개발</td>
                         </tr>
-                        <tr style="background: #c8e6c9; font-weight: 600;">
-                            <td><strong>합계</strong></td>
-                            <td><strong>5억</strong></td>
-                            <td>병행 신청 가능</td>
-                            <td>2-3개월</td>
+                        <tr>
+                            <td><strong>초기 고객 확보 지연</strong></td>
+                            <td>중간 (40%)</td>
+                            <td>중간</td>
+                            <td>사전 계약 확보, 프리미엄 마케팅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>자연 재해</strong></td>
+                            <td>낮음 (20%)</td>
+                            <td>높음</td>
+                            <td>재해보험 가입, 방재 시설 강화</td>
+                        </tr>
+                        <tr>
+                            <td><strong>인력 확보 어려움</strong></td>
+                            <td>중간 (50%)</td>
+                            <td>중간</td>
+                            <td>경쟁 임금 책정, 농협 협력</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h3>6.2 신청 권장 일정</h3>
+                <div class="warning-box">
+                    <p><strong>⚠️ 최대 위험: 토마토 가격 변동</strong></p>
+                    <p style="margin-top: 10px;">수익성의 직결되므로, 판매 채널 다각화와 고부가가치 상품화가 필수입니다.</p>
+                </div>
+
+            </div>
+
+            <!-- Section 7: 정부지원금 신청 안내 -->
+            <div class="section">
+                <h2>7. 정부지원금 신청 안내</h2>
+
+                <h3>7.1 청년농 육성사업 개요</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>항목</th>
+                            <th>내용</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>지원 기관</strong></td>
+                            <td>농림축산식품부 (지역별 농산물품질관리원)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>지원액</strong></td>
+                            <td>최대 5억 원</td>
+                        </tr>
+                        <tr>
+                            <td><strong>신청 기한</strong></td>
+                            <td>연중 접수 (연 2회 공고)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>심사 기간</strong></td>
+                            <td>2-3개월</td>
+                        </tr>
+                        <tr>
+                            <td><strong>지원 대상</strong></td>
+                            <td>만 40세 이하 영농 경험 2년 이상</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>7.2 필수 제출 서류</h3>
 
                 <ul class="feature-list">
-                    <li><strong>즉시:</strong> 농림축산식품부 청년농 육성사업 신청 (농지 확보 후)</li>
-                    <li><strong>2주 내:</strong> 지역 농업기술센터 상담 (스마트팜 설계)</li>
-                    <li><strong>1개월 내:</strong> 모든 지원금 신청 서류 제출</li>
-                    <li><strong>3개월 내:</strong> 지원금 승인 및 착공</li>
+                    <li>사업계획서 (상세 재정 계획 포함)</li>
+                    <li>영농 능력 입증 자료 (교육 이수증, 경력 증명)</li>
+                    <li>농지 확보 증명 (임차차 또는 구매계약서)</li>
+                    <li>자부담 능력 증명 (통장 잔액 등)</li>
+                    <li>기술 파트너 계약서 (스마트팜 운영 지원)</li>
                 </ul>
 
-                <div class="highlight-box">
+                <div class="highlight-blue">
                     <p><strong>💡 추가 지원 기회</strong></p>
-                    <ul class="feature-list" style="margin-top: 15px;">
-                        <li>귀농 신청 시: 추가 1,000만 원 (귀농 교육 이수)</li>
-                        <li>지자체 지원: 지역별 500만-2,000만 원</li>
-                        <li>기술 교육: 무료 스마트팜 교육 (농업기술원)</li>
+                    <ul class="feature-list" style="margin-top: 10px;">
+                        <li>귀농인 신청 시: 추가 1,000만 원</li>
+                        <li>지자체 지원: 지역별 500만~2,000만 원</li>
+                        <li>녹색산업 기술 지원: 교육 및 컨설팅 무료</li>
                     </ul>
                 </div>
+
             </div>
 
-            <!-- Section 7: 위험 관리 -->
+            <!-- Section 8: 추진 일정 -->
             <div class="section">
-                <h2>7. 위험 관리 및 주의사항</h2>
+                <h2>8. 추진 일정</h2>
 
-                <div class="warning-box">
-                    <p><strong>⚠️ 초기 안정화 기간 필수</strong></p>
-                    <p style="margin-top: 10px;">처음 3-4개월은 시스템 안정화 기간이므로 실제 생산량은 제한될 수 있습니다.</p>
-                    <p style="margin-top: 10px;">이 기간 동안 생산량이 50-70% 수준일 수 있으므로 현금 흐름 관리 필요</p>
-                </div>
+                <h3>8.1 Phase별 추진 계획</h3>
 
-                <div class="warning-box">
-                    <p><strong>⚠️ 기술 파트너 선정 필수</strong></p>
-                    <p style="margin-top: 10px;">신뢰할 수 있는 스마트팜 장비 제공사와 계약 (24/7 기술 지원)</p>
-                    <p style="margin-top: 10px;">추천사: 혜성, LG CNS, 팜모닝 등 실적 있는 업체</p>
-                </div>
-
-                <div class="warning-box">
-                    <p><strong>⚠️ 초기 고객 확보</strong></p>
-                    <p style="margin-top: 10px;">사업 시작 전 B2B 도매처(마트 등)와 선 계약 권장 (최소 30-50톤/월)</p>
-                    <p style="margin-top: 10px;">초기 매출 안정화가 매우 중요함</p>
-                </div>
-            </div>
-
-            <!-- Section 8: 최종 요약 -->
-            <div class="section">
-                <h2>8. 최종 요약</h2>
-
-                <h3>투자 구조</h3>
                 <table>
-                    <tr>
-                        <td style="background: #f8f9fa;"><strong>정부지원금 (청년농)</strong></td>
-                        <td><strong>5억 원</strong></td>
-                    </tr>
-                    <tr>
-                        <td style="background: #f8f9fa;"><strong>자부담</strong></td>
-                        <td><strong>1.1억 원</strong> (최소화)</td>
-                    </tr>
-                    <tr style="background: #c8e6c9; font-weight: 600;">
-                        <td><strong>총 투자</strong></td>
-                        <td><strong>6.1억 원</strong></td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>기간</th>
+                            <th>주요 활동</th>
+                            <th>성과</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Phase 1<br/>준비</strong></td>
+                            <td>Month 1-2</td>
+                            <td>정부지원금 신청<br/>토지 확보<br/>기술 파트너 선정</td>
+                            <td>지원금 승인<br/>토지 임차차<br/>계약서 체결</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phase 2<br/>구축</strong></td>
+                            <td>Month 3-4</td>
+                            <td>온실 시공<br/>설비 설치<br/>시스템 구축</td>
+                            <td>온실 완공<br/>시스템 가동<br/>최종 검수</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phase 3<br/>시운전</strong></td>
+                            <td>Month 5-6</td>
+                            <td>인력 교육<br/>베타 운영<br/>고객 확보</td>
+                            <td>운영 매뉴얼 완성<br/>테스트 생산<br/>사전 계약</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phase 4<br/>본운영</strong></td>
+                            <td>Month 7+</td>
+                            <td>정상 운영<br/>판매 및 수익화<br/>확장 검토</td>
+                            <td>월 4톤 생산<br/>연 2.4억 매출<br/>손익분기점 달성</td>
+                        </tr>
+                    </tbody>
                 </table>
 
-                <h3>재무 성과</h3>
+            </div>
+
+            <!-- Section 9: 사업의 강점 -->
+            <div class="section">
+                <h2>9. 사업의 강점 및 차별성</h2>
+
+                <h3>9.1 시장 경쟁 우위</h3>
+
+                <div class="highlight-green">
+                    <ul class="feature-list">
+                        <li><strong>정부 지원:</strong> 87% 자금을 정부 지원으로 충당 → 재무 리스크 최소화</li>
+                        <li><strong>스마트팜 기술:</strong> IoT 센서 + AI 기반 최적화 → 생산성 향상</li>
+                        <li><strong>다중 채널:</strong> B2B, B2C, 가공, 지역 유통 → 매출 안정화</li>
+                        <li><strong>프리미엄 시장:</strong> 고급 토마토 시장 15% 연 성장 → 가격 경쟁력</li>
+                        <li><strong>친환경 인증:</strong> 유기농 전환 가능 → 브랜드 프리미엄</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Section 10: 최종 요약 -->
+            <div class="section">
+                <h2>10. 최종 요약 및 결론</h2>
+
+                <h3>10.1 사업 타당성</h3>
+
+                <div class="highlight-green">
+                    <p style="font-size: 1.05em;"><strong>✅ 종합 평가: GO (추진 권장)</strong></p>
+                </div>
+
+                <h3>10.2 핵심 성과</h3>
+
                 <table>
-                    <tr>
-                        <td style="background: #f8f9fa;"><strong>1년차 매출</strong></td>
-                        <td><strong>35억 원</strong></td>
-                    </tr>
-                    <tr>
-                        <td style="background: #f8f9fa;"><strong>1년차 순이익</strong></td>
-                        <td><strong>22.9억 원</strong></td>
-                    </tr>
-                    <tr>
-                        <td style="background: #f8f9fa;"><strong>손익분기점</strong></td>
-                        <td><strong>약 2주</strong></td>
-                    </tr>
-                    <tr>
-                        <td style="background: #f8f9fa;"><strong>3년 누적 순이익</strong></td>
-                        <td><strong>102.4억 원</strong></td>
-                    </tr>
-                    <tr style="background: #c8e6c9; font-weight: 600;">
-                        <td><strong>3년 ROI</strong></td>
-                        <td><strong>9,309%</strong></td>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>지표</th>
+                            <th>수치</th>
+                            <th>평가</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>초기 투자 회수 기간</strong></td>
+                            <td>약 6개월</td>
+                            <td>✅ 우수 (농업 업계 평균 2-3년)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1년차 순이익</strong></td>
+                            <td>9,000만 원</td>
+                            <td>✅ 양호</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3년 누적 순이익</strong></td>
+                            <td>2.98억 원</td>
+                            <td>✅ 우수</td>
+                        </tr>
+                        <tr>
+                            <td><strong>자부담 비율</strong></td>
+                            <td>약 9%</td>
+                            <td>✅ 매우 낮음</td>
+                        </tr>
+                    </tbody>
                 </table>
 
-                <div class="highlight-box highlight-green">
-                    <p style="font-size: 1.1em;"><strong>🎯 하루의 토마토농장 - 최종 평가</strong></p>
-                    <p style="margin-top: 15px;">✅ <strong>정부 지원 5억 + 자부담 1.1억</strong>으로 총 6.1억 투자</p>
-                    <p style="margin-top: 10px;">✅ <strong>자부담을 87% 절감</strong>했으며 충분한 정부 지원 확보</p>
-                    <p style="margin-top: 10px;">✅ <strong>1년차부터 22.9억 순이익</strong> 달성 가능</p>
-                    <p style="margin-top: 10px;">✅ <strong>3년 누적 순이익 102.4억 원</strong>으로 매우 높은 수익성</p>
-                    <p style="margin-top: 15px;"><strong style="color: #2e7d32; font-size: 1.05em;">결론: 청년농 정부지원을 최대 활용한 최적의 사업 구조 수립 완료</strong></p>
+                <h3>10.3 주요 성공 요소</h3>
+
+                <ul class="feature-list">
+                    <li><strong>정확한 생산 예측:</strong> 현지 조사 기반 현실적 규모 설정</li>
+                    <li><strong>다중 판매 채널:</strong> 가격 변동 대비 안정적 수익 구조</li>
+                    <li><strong>정부 지원 최대화:</strong> 자본금 부담 최소화</li>
+                    <li><strong>지속적 성장:</strong> 3년차 10% 증산으로 수익성 확대</li>
+                </ul>
+
+                <h3>10.4 주의사항</h3>
+
+                <div class="warning-box">
+                    <ul class="feature-list" style="margin: 0;">
+                        <li>이 계획은 현실 조사 기반이나, 실제 사업 추진 전 현지 전문가 상담 필수</li>
+                        <li>토마토 가격은 시장 변동성이 크므로, 판매 계약을 먼저 확보하는 것이 중요</li>
+                        <li>정부지원금 신청에는 2-3개월이 소요되므로, 먼저 토지를 확보할 것</li>
+                        <li>스마트팜 운영에는 기술 지원 파트너가 필수 (24/7 지원 계약)</li>
+                    </ul>
                 </div>
+
             </div>
+
         </div>
 
         <div class="footer">
             <p><strong>🍅 하루의 토마토농장</strong></p>
-            <p>청년농 정부지원 기반 스마트팜 사업계획서</p>
-            <p style="margin-top: 20px; color: #999;">문서 작성일: 2026년 5월 17일</p>
-            <p style="color: #999; font-size: 0.9em;">본 문서는 기밀 정보입니다. 무단 배포를 금합니다.</p>
+            <p>현실적이고 실현 가능한 스마트팜 토마토 사업계획서</p>
+            <p style="margin-top: 15px; font-size: 0.95em; color: #999;">
+                v3.0 | 2026년 5월 | 청년농 정부지원 5억 원 기반<br/>
+                1,000평 규모 | 연간 50톤 생산 | 월 평균 2,040만 원 매출
+            </p>
+            <div class="footer-links">
+                <a href="mailto:kimdo750@gmail.com">📧 kimdo750@gmail.com</a>
+                <a href="https://github.com/kimdo750-ui/tomato-smartfarm">🔗 GitHub</a>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.85em; color: #bbb;">
+                이 사업계획서는 스마트팜 토마토 사업의 추진을 위한 기본 자료입니다.<br/>
+                실제 사업 시행 전에 현지 전문가 상담을 권장합니다.
+            </p>
         </div>
+
     </div>
 </body>
 </html>
