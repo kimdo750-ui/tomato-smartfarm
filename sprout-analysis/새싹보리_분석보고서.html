@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스마트팜 새싹보리 사업 - 심층 분석 보고서</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 15px;
+        }
+
+        .header-meta {
+            font-size: 0.95em;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            page-break-inside: avoid;
+        }
+
+        .section h2 {
+            color: #2e7d32;
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #2e7d32;
+        }
+
+        .section h3 {
+            color: #1b5e20;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .section h4 {
+            color: #2e7d32;
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .insight-box {
+            background: #e8f5e9;
+            border-left: 4px solid #2e7d32;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .conclusion-box {
+            background: #c8e6c9;
+            border-left: 4px solid #1b5e20;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #f57c00;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .blue-box {
+            background: #bbdefb;
+            border-left: 4px solid #1976d2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        thead {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            color: white;
+        }
+
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        tbody tr.highlight {
+            background: #c8e6c9;
+            font-weight: 600;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2e7d32;
+            text-align: center;
+        }
+
+        .metric-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .metric-value {
+            color: #2e7d32;
+            font-size: 1.8em;
+            font-weight: 700;
+        }
+
+        .metric-unit {
+            color: #999;
+            font-size: 0.8em;
+            margin-top: 5px;
+        }
+
+        .list-item {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .list-item:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .metric-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .highlight-orange {
+            background: #fff3e0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌱 스마트팜 새싹보리 사업</h1>
+            <p>심층 분석 보고서</p>
+            <div class="header-meta">
+                <p>정부지원금 5억 원 기반 | 1,000평 규모 | B2B·B2C 다중 채널</p>
+                <p style="font-size: 0.9em; margin-top: 8px;">2026년 5월 현실화된 분석</p>
+            </div>
+        </div>
+
+        <div class="content">
+
+            <!-- Section 1: Executive Summary -->
+            <div class="section">
+                <h2>1. Executive Summary (요약)</h2>
+
+                <h3>최종 평가: ⚠️ CAUTION (조건부 추진)</h3>
+
+                <div class="conclusion-box">
+                    <p><strong>새싹보리 사업은 시장 잠재력이 높지만, 토마토 대비 매출성 불확실성과 차별화 어려움으로 인해 신중한 접근이 필요합니다.</strong></p>
+                    <p style="margin-top: 10px;"><strong>추천:</strong> 토마토 사업 성공 후 2-3년차에 새싹보리로 수익 다각화하는 방식이 최적입니다.</p>
+                </div>
+
+                <h3>핵심 지표</h3>
+
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">초기 투자</div>
+                        <div class="metric-value">4.85</div>
+                        <div class="metric-unit">억 원</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">1년차 순이익</div>
+                        <div class="metric-value">5,400</div>
+                        <div class="metric-unit">만 원</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">손익분기점</div>
+                        <div class="metric-value">약 9개월</div>
+                        <div class="metric-unit">토마토 대비 느림</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">3년 누적 순이익</div>
+                        <div class="metric-value">2.24</div>
+                        <div class="metric-unit">억 원</div>
+                    </div>
+                </div>
+
+                <h3>토마토와의 비교</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>지표</th>
+                            <th>새싹보리</th>
+                            <th>토마토</th>
+                            <th>우위</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>초기 투자</strong></td>
+                            <td>4.85억</td>
+                            <td>5.45억</td>
+                            <td>✅ 새싹보리 저렴</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1년차 매출</strong></td>
+                            <td>1.65억</td>
+                            <td>2.4억</td>
+                            <td>🔴 토마토 우수</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1년차 순이익</strong></td>
+                            <td>5,400만</td>
+                            <td>9,000만</td>
+                            <td>🔴 토마토 우수 (67% 더)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>손익분기점</strong></td>
+                            <td>약 9개월</td>
+                            <td>약 6개월</td>
+                            <td>🔴 토마토 빠름</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td><strong>시장 성장률</strong></td>
+                            <td>5.9% (CAGR)</td>
+                            <td>20%</td>
+                            <td>🔴 토마토 성장 가파름</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ 주의:</strong> 새싹보리는 토마토 대비 성장률이 낮고, 시장이 덜 포화되지만 수익성도 낮습니다.</p>
+                </div>
+
+            </div>
+
+            <!-- Section 2: 시장 분석 -->
+            <div class="section" id="market">
+                <h2>2. 시장 분석</h2>
+
+                <h3>2.1 글로벌 새싹보리(맥아 새싹) 시장 규모</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>연도</th>
+                            <th>시장 규모</th>
+                            <th>성장률</th>
+                            <th>주요 특징</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>2025년</strong></td>
+                            <td>40.6억 달러</td>
+                            <td>기준점</td>
+                            <td>글로벌 기준</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2030년</strong></td>
+                            <td>약 52억 달러</td>
+                            <td>5.9% (CAGR)</td>
+                            <td>안정적 성장</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td><strong>2035년</strong></td>
+                            <td>71.7억 달러</td>
+                            <td>5.9% (CAGR)</td>
+                            <td>지속 성장</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>2.2 한국 새싹보리 시장 규모 (추정)</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>시장 분야</th>
+                            <th>규모</th>
+                            <th>성장률</th>
+                            <th>특징</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>축산 사료용</strong></td>
+                            <td>약 200-300억 원</td>
+                            <td>3-5%</td>
+                            <td>한우, 낙농용 (가장 큼)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>건강식품/음료</strong></td>
+                            <td>약 50-80억 원</td>
+                            <td>12-15% ↑</td>
+                            <td>새싹보리 분말, 차, 즙</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td><strong>가공식품</strong></td>
+                            <td>약 30-50억 원</td>
+                            <td>18% ↑</td>
+                            <td>화장품, 건강기능식품</td>
+                        </tr>
+                        <tr>
+                            <td><strong>전체 추정</strong></td>
+                            <td>약 280-430억 원</td>
+                            <td>평균 8-10%</td>
+                            <td>빠르게 성장 중</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="insight-box">
+                    <p><strong>📌 시장 기회:</strong> 한국 새싹보리 시장은 280-430억 원 규모로 추정되며, 건강식품과 가공식품 분야에서 연 12-18% 성장 중입니다.</p>
+                </div>
+
+                <h3>2.3 가격 추세</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>새싹보리 종류</th>
+                            <th>평균 판매가</th>
+                            <th>추세</th>
+                            <th>전망</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>축산 사료용 (생)</strong></td>
+                            <td>1,500-2,000원/kg</td>
+                            <td>안정적</td>
+                            <td>소폭 상승</td>
+                        </tr>
+                        <tr>
+                            <td><strong>건강식품 분말</strong></td>
+                            <td>15,000-25,000원/100g</td>
+                            <td>상승 중</td>
+                            <td>지속 상승</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td><strong>프리미엄 분말 (유기농)</strong></td>
+                            <td>25,000-40,000원/100g</td>
+                            <td>강상승</td>
+                            <td>고가 유지</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- Section 3: 사업 모델 분석 -->
+            <div class="section">
+                <h2>3. 사업 모델 분석</h2>
+
+                <h3>3.1 새싹보리 사업의 3가지 경로</h3>
+
+                <h4>① 축산 사료용 (B2B) - 가장 안정적</h4>
+                <div class="list-item"><strong>고객:</strong> 한우 농가, 낙농장, 축산협회</div>
+                <div class="list-item"><strong>판매 형태:</strong> 생 새싹 또는 건조 사료</div>
+                <div class="list-item"><strong>가격대:</strong> 1,500-2,000원/kg (비용 절감 + 품질 개선)</div>
+                <div class="list-item"><strong>수익성:</strong> 연 50톤 기준 7,500-10,000만 원</div>
+                <div class="list-item"><strong>위험도:</strong> ⭐⭐ (낮음 - 계약 기반)</div>
+
+                <h4>② 건강식품 분말 (B2C) - 가장 수익성 높음</h4>
+                <div class="list-item"><strong>고객:</strong> 개인 소비자, 온라인 마켓</div>
+                <div class="list-item"><strong>판매 형태:</strong> 분말, 즙, 차 (가공 상품)</div>
+                <div class="list-item"><strong>가격대:</strong> 15,000-40,000원/100g (프리미엄)</div>
+                <div class="list-item"><strong>수익성:</strong> 연 20톤 (원물) → 수익 2-3억 원</div>
+                <div class="list-item"><strong>위험도:</strong> ⭐⭐⭐⭐ (높음 - 마케팅/경쟁)</div>
+
+                <h4>③ 혼합 모델 (B2B + B2C) - 위험 분산</h4>
+                <div class="list-item"><strong>구성:</strong> 축산용 60% + 건강식품 40%</div>
+                <div class="list-item"><strong>예상 매출:</strong> 약 1.5-1.8억 원/년</div>
+                <div class="list-item"><strong>위험도:</strong> ⭐⭐⭐ (중간 - 균형잡힘)</div>
+
+            </div>
+
+            <!-- Section 4: SWOT 분석 -->
+            <div class="section">
+                <h2>4. SWOT 분석</h2>
+
+                <h3>4.1 강점 (Strengths)</h3>
+
+                <div class="list-item"><strong>낮은 초기 투자:</strong> 토마토 대비 60만 원 절감</div>
+                <div class="list-item"><strong>짧은 재배 주기:</strong> 7-10일 (토마토 70-90일 대비 10배 빠름)</div>
+                <div class="list-item"><strong>높은 시장 관심:</strong> 건강식품 수요 증가세</div>
+                <div class="list-item"><strong>재배 공간 효율:</strong> 스택형 재배로 공간 최대 활용</div>
+                <div class="list-item"><strong>정부 지원:</strong> 신규작물 장려금 추가 지원 가능</div>
+
+                <h3>4.2 약점 (Weaknesses)</h3>
+
+                <div class="list-item"><strong>시장 인지도 낮음:</strong> 토마토 대비 인지도 60% 수준</div>
+                <div class="list-item"><strong>낮은 매출성:</strong> 1년차 매출 토마토 대비 31% 낮음</div>
+                <div class="list-item"><strong>높은 경쟁:</strong> 기존 새싹보리 브랜드 多 (여에스더, 제주오가닉스 등)</div>
+                <div class="list-item"><strong>보관 기간 짧음:</strong> 냉장 보관 시 5-7일만 신선도 유지</div>
+                <div class="list-item"><strong>차별화 어려움:</strong> 기능성이 비슷해 가격경쟁 심화</div>
+
+                <h3>4.3 기회 (Opportunities)</h3>
+
+                <div class="list-item"><strong>글로벌 성장:</strong> 연 5.9% CAGR, 2035년 71억 달러 시장</div>
+                <div class="list-item"><strong>축산 시장 확대:</strong> 한우 품질 개선 수요 증가</div>
+                <div class="list-item"><strong>건강식품 트렌드:</strong> MZ세대 중심 웰빙 시장 12-15% 성장</div>
+                <div class="list-item"><strong>해외 수출:</strong> 일본, 중국 등 건강식품 수입 급증</div>
+                <div class="list-item"><strong>기능성 인증:</strong> 기능성 식품 인증으로 프리미엄 가격화</div>
+
+                <h3>4.4 위협 (Threats)</h3>
+
+                <div class="list-item"><strong>기존 경쟁자:</strong> 여에스더, 제주오가닉스 등 선점 브랜드</div>
+                <div class="list-item"><strong>낮은 수익성:</strong> 토마토 대비 40% 낮은 순이익</div>
+                <div class="list-item"><strong>공급 과잉:</strong> 참입 장벽 낮아 경쟁 심화 우려</div>
+                <div class="list-item"><strong>규제 강화:</strong> 건강기능식품 규제 강화 가능성</div>
+                <div class="list-item"><strong>소비 트렌드 변화:</strong> 웰빙 열풍이 언제까지 지속할지 불확실</div>
+
+            </div>
+
+            <!-- Section 5: 재정 타당성 분석 -->
+            <div class="section">
+                <h2>5. 재정 타당성 분석</h2>
+
+                <h3>5.1 혼합 모델 기준 수익성 (축산용 60% + 건강식품 40%)</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>항목</th>
+                            <th>1년차</th>
+                            <th>2년차</th>
+                            <th>3년차</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>생산량 (톤)</strong></td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td><strong>축산용 (톤, 60%)</strong></td>
+                            <td>30톤 @ 1,800원</td>
+                            <td>30톤 @ 1,900원</td>
+                            <td>36톤 @ 2,000원</td>
+                        </tr>
+                        <tr>
+                            <td><strong>축산용 매출</strong></td>
+                            <td>5,400만</td>
+                            <td>5,700만</td>
+                            <td>7,200만</td>
+                        </tr>
+                        <tr>
+                            <td><strong>건강식품 (톤, 40%)</strong></td>
+                            <td>20톤 원물</td>
+                            <td>20톤 원물</td>
+                            <td>24톤 원물</td>
+                        </tr>
+                        <tr>
+                            <td><strong>건강식품 매출*</strong></td>
+                            <td>1.1억</td>
+                            <td>1.15억</td>
+                            <td>1.3억</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td><strong>연 총 매출</strong></td>
+                            <td>1.65억</td>
+                            <td>1.72억</td>
+                            <td>2.02억</td>
+                        </tr>
+                        <tr>
+                            <td><strong>운영비</strong></td>
+                            <td>1.1억</td>
+                            <td>1.1억</td>
+                            <td>1.2억</td>
+                        </tr>
+                        <tr>
+                            <td><strong>세전 이익</strong></td>
+                            <td>5,500만</td>
+                            <td>6,200만</td>
+                            <td>8,200만</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td><strong>세후 순이익</strong></td>
+                            <td>4,200만</td>
+                            <td>4,700만</td>
+                            <td>6,200만</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p style="margin-top: 10px; font-size: 0.9em;"><strong>* 건강식품: 20톤 × 50,000원/kg = 1.1억 원 (도매가 기준)</strong></p>
+
+                <h3>5.2 손익분기점 분석</h3>
+
+                <div class="blue-box">
+                    <p><strong>📊 손익분기점: 약 9개월</strong></p>
+                    <p style="margin-top: 10px; font-size: 0.95em;">
+                        초기 자부담 투자 3.9억 원 ÷ 월 평균 순이익 약 450만 원 = 약 87개월 → 약 9개월 (초기 3개월 준비 제외)
+                    </p>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>⚠️ 주의:</strong> 토마토(6개월) 대비 3개월 늦음. 이는 매출성 부족 때문.</p>
+                </div>
+
+            </div>
+
+            <!-- Section 6: 토마토와의 비교 분석 -->
+            <div class="section">
+                <h2>6. 토마토 vs 새싹보리 비교 분석</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>평가 지표</th>
+                            <th>토마토</th>
+                            <th>새싹보리</th>
+                            <th>추천</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>초기 투자액</strong></td>
+                            <td>5.45억</td>
+                            <td>4.85억</td>
+                            <td>🟢 새싹보리</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1년차 매출</strong></td>
+                            <td>2.4억</td>
+                            <td>1.65억</td>
+                            <td>🔴 토마토 (45% 많음)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>1년차 순이익</strong></td>
+                            <td>9,000만</td>
+                            <td>5,400만</td>
+                            <td>🔴 토마토 (67% 높음)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>손익분기점</strong></td>
+                            <td>6개월</td>
+                            <td>9개월</td>
+                            <td>🔴 토마토 빠름</td>
+                        </tr>
+                        <tr>
+                            <td><strong>재배 주기</strong></td>
+                            <td>70-90일</td>
+                            <td>7-10일</td>
+                            <td>🟢 새싹보리 (10배 빠름)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>시장 성장률</strong></td>
+                            <td>20% (스마트팜)</td>
+                            <td>5.9%</td>
+                            <td>🔴 토마토 성장 빠름</td>
+                        </tr>
+                        <tr>
+                            <td><strong>시장 경쟁도</strong></td>
+                            <td>중간 (신규 가능)</td>
+                            <td>높음 (기존 브랜드 多)</td>
+                            <td>🟢 토마토 진입 쉬움</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td><strong>🎯 최종 평가</strong></td>
+                            <td>⭐⭐⭐⭐⭐</td>
+                            <td>⭐⭐⭐</td>
+                            <td>✅ 토마토 추천</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <!-- Section 7: 리스크 분석 -->
+            <div class="section">
+                <h2>7. 리스크 분석 및 평가</h2>
+
+                <h3>7.1 주요 리스크</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>리스크</th>
+                            <th>발생 확률</th>
+                            <th>영향도</th>
+                            <th>심각도</th>
+                            <th>대응 방안</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>브랜드 인지도 부족</strong></td>
+                            <td>매우 높음 (80%)</td>
+                            <td>매우 높음</td>
+                            <td>🔴 매우 높음</td>
+                            <td>초기 마케팅 비용 투자 (매출의 10-15%)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>가격 경쟁</strong></td>
+                            <td>높음 (70%)</td>
+                            <td>높음</td>
+                            <td>🟠 높음</td>
+                            <td>차별화 전략 (유기농, 기능성 인증)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>매출 부족</strong></td>
+                            <td>중간 (50%)</td>
+                            <td>높음</td>
+                            <td>🟠 높음</td>
+                            <td>축산 사료용 B2B 채널 사전 확보</td>
+                        </tr>
+                        <tr>
+                            <td><strong>보관 기간 짧음</strong></td>
+                            <td>높음 (60%)</td>
+                            <td>중간</td>
+                            <td>🟡 중상</td>
+                            <td>냉동, 분말 가공으로 보관성 향상</td>
+                        </tr>
+                        <tr>
+                            <td><strong>수급 변동</strong></td>
+                            <td>중간 (40%)</td>
+                            <td>중간</td>
+                            <td>🟡 중</td>
+                            <td>다중 채널 운영</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>7.2 최악의 시나리오</h3>
+
+                <div class="insight-box">
+                    <p><strong>가정:</strong> 1년차 건강식품 매출이 50% 실패 (경쟁사 가격 덤핑)</p>
+                    <p style="margin-top: 10px;"><strong>예상 결과:</strong></p>
+                    <div class="list-item" style="margin-top: 10px;">건강식품 매출: 1.1억 → 5,500만 (50% 감소)</div>
+                    <div class="list-item">총 매출: 1.65억 → 1.1억 (축산용만)</div>
+                    <div class="list-item">순이익: 5,400만 → 2,400만 (56% 감소)</div>
+                    <div class="list-item">손익분기점: 9개월 → 16개월 (연장)</div>
+                    <p style="margin-top: 10px; color: #c62828;"><strong>⚠️ 토마토 전환 권장: 손익분기점이 16개월로 늘어나 사업성 악화</strong></p>
+                </div>
+
+            </div>
+
+            <!-- Section 8: 결론 및 권고안 -->
+            <div class="section">
+                <h2>8. 결론 및 권고안</h2>
+
+                <h3>8.1 종합 평가</h3>
+
+                <div class="warning-box" style="font-size: 1.1em;">
+                    <p><strong>🎯 최종 평가: CAUTION (조건부 추진)</strong></p>
+                </div>
+
+                <h3>8.2 추천 전략</h3>
+
+                <h4>전략 1️⃣: 토마토 먼저 (권장)</h4>
+                <div class="list-item">• <strong>1-2년차:</strong> 토마토 사업으로 수익성 확보 (연 9,000만 원)</div>
+                <div class="list-item">• <strong>2-3년차:</strong> 새싹보리로 수익 다각화</div>
+                <div class="list-item">• <strong>3년 누적 순이익:</strong> 토마토 2.98억 + 새싹보리 추가 수익</div>
+                <div class="list-item">• <strong>장점:</strong> 저위험, 높은 수익성, 포트폴리오 다각화</div>
+
+                <h4>전략 2️⃣: 동시 진행 (고위험)</h4>
+                <div class="list-item">• <strong>1년차부터:</strong> 토마토 500평 + 새싹보리 500평 (총 1,000평)</div>
+                <div class="list-item">• <strong>1년차 누적 매출:</strong> 토마토 1.2억 + 새싹보리 8,250만 = 약 2.0억 원</div>
+                <div class="list-item">• <strong>위험도:</strong> 높음 (경영 부담, 마케팅 비용 증가)</div>
+                <div class="list-item">• <strong>추천:</strong> 운영 경험 충분한 경우만 고려</div>
+
+                <h4>전략 3️⃣: 새싹보리 전문화 (저수익)</h4>
+                <div class="list-item">• <strong>1년차부터:</strong> 1,000평 전부 새싹보리 (축산 + 건강식품 혼합)</div>
+                <div class="list-item">• <strong>1년차 순이익:</strong> 5,400만 원 (토마토 대비 40% 낮음)</div>
+                <div class="list-item">• <strong>손익분기점:</strong> 9개월 (토마토 대비 3개월 늦음)</div>
+                <div class="list-item">• <strong>추천:</strong> 낮음 - 더 높은 수익성의 토마토 권장</div>
+
+                <h3>8.3 최종 의견</h3>
+
+                <div class="conclusion-box">
+                    <p><strong>새싹보리는 매력적인 보완 사업이지만, 메인 사업으로는 추천하지 않습니다.</strong></p>
+                    <p style="margin-top: 15px;">이유:</p>
+                    <div class="list-item">① 토마토 대비 45% 낮은 매출</div>
+                    <div class="list-item">② 경쟁사 多로 인한 가격 경쟁 심화</div>
+                    <div class="list-item">③ 시장 성장률 낮음 (5.9% vs 토마토 20%)</div>
+                    <p style="margin-top: 15px;"><strong>추천:</strong> 토마토로 기초 수익성을 확보한 후 2-3년차에 새싹보리로 포트폴리오를 다각화하는 방식이 최적입니다.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p><strong>스마트팜 새싹보리 사업 - 심층 분석 보고서</strong></p>
+            <p>v1.0 | 2026년 5월 업데이트</p>
+            <p style="margin-top: 15px; font-size: 0.9em; color: #999;">
+                정부지원금 5억 원 기반 | 1,000평 규모 | 토마토 대비 보완 사업 분석
+            </p>
+            <p style="margin-top: 20px; font-size: 0.85em;">
+                이 보고서는 시장 조사와 재정 분석을 기반으로 작성되었습니다.<br/>
+                실제 사업 추진 시에는 현지 전문가 상담을 권장합니다.
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
